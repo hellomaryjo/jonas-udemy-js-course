@@ -103,7 +103,7 @@ body {
     font-size: 30px;
 }
 
-button, input {
+button {
     position: absolute;
     width: 200px;
     left: 50%;
@@ -117,21 +117,6 @@ button, input {
     cursor: pointer;
     font-weight: 300;
     transition: background-color 0.3s, color 0.3s;
-}
-
-#winningScore {
-    display: block;
-    position: absolute;
-    left: 40%;
-    top: 45px;
-    text-align: center;
-}
-
-#winningScoreInput {
-    margin-top: 10px;
-    cursor: text;
-    background: white;
-    border: 1px solid black;
 }
 
 button:hover { font-weight: 600; }
@@ -152,7 +137,7 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 110px;}
+.btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
