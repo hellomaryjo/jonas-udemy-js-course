@@ -1,0 +1,29 @@
+
+<script>
+
+const teamJohn = [89, 120, 103];
+const teamMike = [116, 94, 123];
+const teamMary = [97, 134, 105];
+
+const johnAverage = averageScore(teamJohn);
+const mikeAverage = averageScore(teamMike);
+const maryAverage = averageScore(teamMary);
+
+if (johnAverage > mikeAverage && johnAverage > maryAverage) {
+    console.log('John\'s team wins with ' + johnAverage + 'points.');
+} else if (mikeAverage > johnAverage && mikeAverage > maryAverage) {
+    console.log('Mike\'s team wins!' + mikeAverage + 'points.');
+} else if (maryAverage > johnAverage && maryAverage > mikeAverage) {
+    console.log('Mary\'s team wins!' + maryAverage + 'points.');
+} else {
+    console.log('There is a draw!');
+}
+
+function averageScore(arr) {
+    let sum = arr.reduce((a, b) => a + b, 0); // 0 in case no array is provided
+    let arrayLength = arr.length;
+    return sum / arrayLength;
+}
+
+
+</script>

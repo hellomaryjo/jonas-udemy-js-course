@@ -1,0 +1,25 @@
+<script>
+
+const bills = [124, 48, 268];
+
+let tips = [];
+let billTotals = [];
+
+let tip = function calculateTip(bill) {
+    if (bill < 50) {
+        return bill * .2;
+    } else if (bill >= 50 && bill < 200) {
+        return bill * .15;
+    } else if (bill >= 200) {
+        return bill * .1;
+    }
+}
+
+for(let i = 0; i < bills.length; i++) {
+    let tipAmount = tip(bills[i]);
+    tips.push(tipAmount);
+}
+
+console.log(tips);
+
+</script>

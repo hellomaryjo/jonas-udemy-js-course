@@ -1,0 +1,92 @@
+ <script>
+
+ let john = {
+     bills: [124, 48, 268, 180, 42],
+     calcTip: function() {
+         // store tips and totsl in empty arrays
+         this.tips = [];
+         this.totals = [];
+         // loop thru bills
+         for (let i = 0; i < this.bills.length; i++) {
+            // init tip var
+            let tip;
+            let bill = this.bills[i];
+            if (bill < 50) {
+                tip = .2;
+            } else if (bill >= 50 && bill < 200) {
+                tip = .15;
+            } else if (bill >= 200) {
+                tip = .1;
+            }
+            // add results to arrays
+            this.tips[i] = bill * tip;
+            this.totals[i] = bill + bill * tip;
+         }
+     }
+ }
+
+ let mark = {
+     bills: [77, 375, 110, 45],
+     calcTip: function() {
+         // store tips and totals in empty arrays
+         this.tips = [];
+         this.totals = [];
+         // loop thru bills
+         for (let i = 0; i < this.bills.length; i++) {
+            // init tip var
+            let tip;
+            let bill = this.bills[i];
+            if (bill < 100) {
+                tip = .2;
+            } else if (bill >= 100 && bill < 300) {
+                tip = .1;
+            } else if (bill >= 300) {
+                tip = .25;
+            }
+            // add results to arrays
+            this.tips[i] = bill * tip;
+            this.totals[i] = bill + bill * tip;
+         }
+     }
+ }
+
+ john.calcTip();
+
+ console.log(john);
+
+ console.log('John\'s tips: ' + john.tips);
+ console.log('John\'s totals: ' + john.totals);
+
+ mark.calcTip();
+
+ console.log('Mark\'s tips: ' + mark.tips);
+ console.log('Mark\'s totals: ' + mark.totals);
+
+ let averageTip = function(tips) {
+    let tipsSum = 0;
+    for (let i = 0; i < tips.length; i++) {
+        tipsSum += tips[i];
+    }
+    let tipsAverage = tipsSum / tips.length;
+    return tipsAverage;
+ }
+
+ john.average = averageTip(john.tips);
+ mark.average = averageTip(mark.tips);
+
+ console.log('John\'s average tip: ' + john.average + '. Mark\'s average tip: ' + mark.average);
+
+ // who had the highest tip?
+
+ if (john.average > mark.average) {
+     console.log('John had the highest tip!')
+ } else if (john.average < mark.average) {
+    console.log('Mark had the highest tip!')
+ } else if (john.average === mark.average) {
+    console.log('John and Mark\'s average tips are the same')
+ }
+
+ // NOW, complete extra part of the coding challenge
+
+
+ </script>

@@ -1,0 +1,36 @@
+<script>
+
+let john = {
+    fullName: 'John Smith',
+    mass: 62,
+    height: 172,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+let diego = {
+    fullName: 'Diego Rivera',
+    mass: 62,
+    height: 175,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+var _$! = 123;
+
+
+john.calcBMI();
+diego.calcBMI();
+
+if (john.bmi > diego.bmi) {
+    console.log(john.fullName + ': ' + john.bmi);
+} else if (john.bmi < diego.bmi) {
+    console.log(diego.fullName + ': ' + diego.bmi);
+} else if (john.bmi === diego.bmi) {
+    console.log('Both ' + john.fullName + ' & ' + diego.fullName + ' have the same BMI at ' + diego.bmi);
+}
+
+</script>
